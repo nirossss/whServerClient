@@ -1,0 +1,21 @@
+<button (click)="isCart = true">Cart <span *ngIf="cartProductsCount>0">({{this.cartProductsCount}})</span></button>
+
+<div class="cart" *ngIf="isCart">
+    <div *ngFor="let cp of cartProducts;">
+        <p>{{cp.title}} {{cp.price | currency}}</p>
+    </div>
+    <div>
+        totalPrice: {{totalPrice | currency}}
+    </div>
+    <div class="center"><button (click)="payCart()">pay</button></div>
+</div>
+
+<div class="cardGrid">
+    <div class="card" *ngFor="let p of productsData;">
+        <div class="center"><img src="{{p.image}}" alt=""></div>
+        <div>title: {{p.title}}</div>
+        <div>description: {{p.description}}</div>
+        <div>price: {{p.price}}</div>
+        <div class="center"><button (click)="addToCart(p)">buy</button></div>
+    </div>
+</div>

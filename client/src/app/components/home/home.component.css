@@ -1,0 +1,26 @@
+.cardGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 10px;
+    padding: 5px;
+    width: 30%;
+    border: 1px solid rgb(202, 202, 202);
+}
+.center{
+    text-align: center;
+}
+.cart{
+    padding: 5px;
+    margin: 10px;
+    width: 20%;
+    border: 1px solid rgb(202, 202, 202);
+}
+img{
+    margin-right: 15px;
+    width: 80%;
+    height: 100px;
+}

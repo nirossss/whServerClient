@@ -1,0 +1,66 @@
+<button (click)="isAdd = true">add</button>
+
+<div class="addDropDowm" *ngIf="isAdd">
+    <div>
+        title: <input type="text" [(ngModel)]="newProduct.title">
+    </div>
+    <div>
+        price: <input type="number" [(ngModel)]="newProduct.price">
+    </div>
+    <div>
+        Description: <input type="text" [(ngModel)]="newProduct.description">
+    </div>
+    <div>
+        image: <input type="text" [(ngModel)]="newProduct.image"><br>
+        <img src="{{newProduct.image}}" alt="">
+    </div>
+    <div>
+        <button (click)="saveAdd()">save</button>
+        <button (click)="cancelAdd()">cancel</button>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                title
+            </th>
+            <th>
+                price
+            </th>
+            <th>
+                option
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of productsData;">
+            <td>{{p.title}}</td>
+            <td>{{p.price | currency}}</td>
+            <td>
+                <button (click)="editProductForm(p)">edit</button>
+                <button (click)="deleteProduct(p.id)">delete</button>
+            </td>
+        </tr>
+        <div class="addDropDowm" *ngIf="isEdit">
+            <div>
+                title: <input type="text" [(ngModel)]="editProductData.title">
+            </div>
+            <div>
+                price: <input type="number" [(ngModel)]="editProductData.price">
+            </div>
+            <div>
+                Description: <input type="text" [(ngModel)]="editProductData.description">
+            </div>
+            <div>
+                image: <input type="text" [(ngModel)]="editProductData.image"><br>
+                <img src="{{editProductData.image}}" alt="">
+            </div>
+            <div>
+                <button (click)="saveEdit()">save</button>
+                <button (click)="cancelEdit()">cancel</button>
+            </div>
+        </div>
+    </tbody>
+</table>

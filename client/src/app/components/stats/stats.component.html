@@ -1,0 +1,34 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                top 5 sales
+            </th>
+            <th>
+                top 5 unique sales
+            </th>
+            <th>
+                past 5 days profit ($)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                <div *ngFor="let top of topSalesData;">
+                    {{top.title}} - {{top.orders}}
+                </div>
+            </th>
+            <th>
+                <div *ngFor="let uni of uniqueSalesData;">
+                    {{uni.title}} - {{uni.unique_sale}}
+                </div>
+            </th>
+            <th>
+                <div *ngFor="let day of daySalesSumData;">
+                    {{day.date | date}} - {{day.profit | currency}}
+                </div>
+            </th>
+        </tr>
+    </tbody>
+</table>
